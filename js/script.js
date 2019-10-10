@@ -113,7 +113,7 @@ if (quanitySteakDinner >= 2){
 	var steakCost = (quanitySteakDinner * 25.60) + sauceQuantity * 2;
 }
 
-document.getElementById('priceOfSteak').innerHTML = 'The bill for steak(s) is $' + steakCost;
+document.getElementById('priceOfSteak').innerHTML = 'The bill for steak(s) is $' + steakCost '<br>Number of Steak Dinners' ;
 
 
 
