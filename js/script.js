@@ -103,17 +103,35 @@ document.getElementById('priceOfMuffin').innerHTML = 'The bill for muffins is $'
 // The parseInt is to turn a string into an interger
 var quanitySteakDinner = parseInt(prompt('How many people are dining?'));
 
-if (quanitySteakDinner >= 2){
-	document.getElementById('priceOfSteak').innerHTML = 'You will get a free steak';
-	var sauce = prompt ('Do you want sauce?');
+if (quanitySteakDinner < 2){
+	var freeSteakDinner = 0;
+	// document.getElementById('numberOfFreeSteaks').innerHTML = 'You will get ' + freeSteakDinner + ' free steak';
 	// == to check for equivalence or === to check for type as well
-	if (sauce === 'yes') {
-		var sauceQuantity = parseInt(prompt('how many suace?'))
-	}
-	var steakCost = (quanitySteakDinner * 25.60) + sauceQuantity * 2;
+} else if (quanitySteakDinner < 4) {
+	var freeSteakDinner = 1;
+} else if (quanitySteakDinner < 6) {
+	var freeSteakDinner = 2;
+} else if (quanitySteakDinner < 8) {
+	var freeSteakDinner = 3;
+} else if (quanitySteakDinner < 10) {
+	var freeSteakDinner = 4;
+} else {
+	var freeSteakDinner = 5;
 }
 
-document.getElementById('priceOfSteak').innerHTML = 'The bill for steak(s) is $' + steakCost '<br>Number of Steak Dinners' ;
+var sauce = prompt ('Do you want sauce?');
+if (sauce === 'yes') {
+		var sauceQuantity = parseInt(prompt('how many suace?'))
+} else {
+		var sauceQuantity = 0;
+}
+
+var steakCost = (quanitySteakDinner * 25.60) + (sauceQuantity * 2);
+
+document.getElementById('priceOfSteak').innerHTML = 'The bill for steak(s) is $' + steakCost + '<br>' + quanitySteakDinner + ' Steak Dinners' + ' and ' + freeSteakDinner + (' free steak dinner(s)');
+
+
+
 
 
 
